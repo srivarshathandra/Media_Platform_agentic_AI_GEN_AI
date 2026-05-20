@@ -1,16 +1,18 @@
-import mysql.connector 
-import streamlit as st 
+# db_con.py
 
+import mysql.connector
+import streamlit as st
 
 conn = mysql.connector.connect(
     host=st.secrets["host"],
     port=st.secrets["Port"],
     user=st.secrets["User"],
     password=st.secrets["password"],
-    database=st.secrets["dbname"]
+    database=st.secrets["dbname"],
+    ssl_disabled=False
 )
 
-cursor=conn.cursor(dictionary=True) # 
+cursor = conn.cursor(dictionary=True)
 
 # USERS TABLE
 cursor.execute("""
