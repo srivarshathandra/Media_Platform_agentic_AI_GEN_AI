@@ -5,8 +5,8 @@ import streamlit as st
 
 conn = mysql.connector.connect(
     host=st.secrets["host"],
-    port=st.secrets["Port"],
-    user=st.secrets["User"],
+    port=st.secrets["port"],
+    user=st.secrets["user"],
     password=st.secrets["password"],
     database=st.secrets["dbname"],
     ssl_disabled=False
